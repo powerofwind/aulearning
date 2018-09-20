@@ -9,15 +9,15 @@ namespace demoapi.Controllers {
         [ApiController]
         public class ValuesController : ControllerBase {
             //GET api/values
-            // [HttpGet]
-            // public booklist Get () {
-            //     return new booklist {
-            //         name = "doraemon",
-            //             id = "001",
-            //             slot = "a1",
-            //             total = 10
-            //     };
-            // }
+            [HttpGet]
+            public booklist Get () {
+                return new booklist {
+                    name = "doraemon",
+                        id = "001",
+                        slot = "a1",
+                        total = 10
+                };
+            }
 
             [HttpGet ("{booklistCount}")]
             public ActionResult<IEnumerable<booklist>> Getbooklist (int booklistCount) {
