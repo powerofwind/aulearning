@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Booklist
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list>
+    <ion-item>
+      <button ion-button (click)="createDataCollection()">Create new collection</button>
+      <button ion-button (click)="addAbooklist()">Add new booklist</button>
+    </ion-item>
+    <ion-item *ngIf="!booklistCollection">
+      BooklistCollection is undefined
+    </ion-item>
+    <ion-item *ngFor="let it of booklistCollection" (click)="removebooklist(it)">
+      <ion-label fixed>ID: {{ it.id }}</ion-label>
+      <ion-label fixed>NAME: {{ it.name }}</ion-label>
+      <ion-label fixed>slot: {{ it.slot }}</ion-label>
+      <ion-label fixed>total: {{ it.total }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
